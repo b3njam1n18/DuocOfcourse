@@ -40,3 +40,15 @@ C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\obj\Debug\net8.0
 C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\obj\Debug\net8.0-windows\DuocOfCourseAdmin.AddUser.resources
 C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\obj\Debug\net8.0-windows\DuocOfCourseAdmin.Modificar_usuario.resources
 C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\obj\Debug\net8.0-windows\DuocOfCourseAdmin.CorreoEnviado.resources
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\nicol\source\repos\DuocOfCourseAdmin\DuocOfCourseAdmin\bin\Debug\net8.0-windows\MySqlConnector.dll

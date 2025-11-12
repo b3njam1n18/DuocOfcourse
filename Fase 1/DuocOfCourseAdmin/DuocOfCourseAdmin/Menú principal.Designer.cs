@@ -1,5 +1,6 @@
 ﻿namespace DuocOfCourseAdmin
 {
+
     partial class Menú_principal
     {
         /// <summary>
@@ -20,6 +21,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -35,12 +37,11 @@
             panel2 = new Panel();
             textBox1 = new TextBox();
             panel3 = new Panel();
-            button2 = new Button();
             dataGridView1 = new DataGridView();
             Nombre = new DataGridViewTextBoxColumn();
             Correo = new DataGridViewTextBoxColumn();
-            Carrera = new DataGridViewTextBoxColumn();
-            Escuela = new DataGridViewTextBoxColumn();
+            Rol = new DataGridViewTextBoxColumn();
+            Activo = new DataGridViewTextBoxColumn();
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -120,7 +121,6 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(button2);
             panel3.Controls.Add(dataGridView1);
             panel3.Controls.Add(button1);
             panel3.Location = new Point(21, 65);
@@ -128,25 +128,14 @@
             panel3.Size = new Size(560, 313);
             panel3.TabIndex = 0;
             // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Right;
-            button2.Location = new Point(476, 94);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Modificar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Correo, Carrera, Escuela });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Correo, Rol, Activo });
             dataGridView1.Location = new Point(27, 55);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(443, 236);
+            dataGridView1.Size = new Size(530, 236);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -160,15 +149,15 @@
             Correo.HeaderText = "Correo electrónico";
             Correo.Name = "Correo";
             // 
-            // Carrera
+            // Rol
             // 
-            Carrera.HeaderText = "Carrera";
-            Carrera.Name = "Carrera";
+            Rol.HeaderText = "Rol";
+            Rol.Name = "Rol";
             // 
-            // Escuela
+            // Activo
             // 
-            Escuela.HeaderText = "Escuela";
-            Escuela.Name = "Escuela";
+            Activo.HeaderText = "Activo";
+            Activo.Name = "Activo";
             // 
             // button1
             // 
@@ -233,11 +222,10 @@
         private Label label1;
         private Label label2;
         private DataGridView dataGridView1;
+        private TextBox textBox1;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Correo;
-        private DataGridViewTextBoxColumn Carrera;
-        private DataGridViewTextBoxColumn Escuela;
-        private TextBox textBox1;
-        private Button button2;
+        private DataGridViewTextBoxColumn Rol;
+        private DataGridViewTextBoxColumn Activo;
     }
 }
