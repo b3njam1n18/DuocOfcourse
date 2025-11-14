@@ -1,0 +1,11 @@
+.vs/
+bin/
+obj/
+Debug/
+Release/
+**/CopilotIndices/
+*.dll
+*.db
+*.pdb
+*.log
+*.cache

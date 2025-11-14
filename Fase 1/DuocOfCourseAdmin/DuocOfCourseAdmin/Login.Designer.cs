@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelLogin = new Panel();
+            button1 = new Button();
             registerLink = new LinkLabel();
             passwordButton = new Button();
             passwordLabel = new Label();
@@ -46,6 +47,7 @@
             panelLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelLogin.AutoSize = true;
             panelLogin.BackColor = Color.White;
+            panelLogin.Controls.Add(button1);
             panelLogin.Controls.Add(registerLink);
             panelLogin.Controls.Add(passwordButton);
             panelLogin.Controls.Add(passwordLabel);
@@ -60,6 +62,16 @@
             panelLogin.Size = new Size(334, 308);
             panelLogin.TabIndex = 0;
             panelLogin.Paint += panelLogin_Paint;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(30, 262);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 9;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // registerLink
             // 
@@ -181,5 +193,6 @@
         private Button passwordButton;
         private LinkLabel registerLink;
         private PictureBox LogoBox;
+        private Button button1;
     }
 }
