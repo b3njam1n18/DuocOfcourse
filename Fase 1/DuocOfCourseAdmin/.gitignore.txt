@@ -1,0 +1,12 @@
+# Visual Studio / Copilot
+.vs/
+**/CopilotIndices/
+# Builds
+**/bin/
+**/obj/
+# Archivos de usuario
+*.user
+*.suo
+*.userosscache
+*.cache
+*.log
