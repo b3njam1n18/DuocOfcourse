@@ -44,6 +44,7 @@
             NombreTextbox = new TextBox();
             correoTextBox = new TextBox();
             correoLabel = new Label();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // button1
@@ -62,7 +63,7 @@
             // AddRoleLabel
             // 
             AddRoleLabel.AutoSize = true;
-            AddRoleLabel.Location = new Point(25, 283);
+            AddRoleLabel.Location = new Point(25, 317);
             AddRoleLabel.Name = "AddRoleLabel";
             AddRoleLabel.Size = new Size(27, 15);
             AddRoleLabel.TabIndex = 5;
@@ -72,7 +73,7 @@
             // RoleComboBox
             // 
             RoleComboBox.Items.AddRange(new object[] { "Administrador", "Docente", "Estudiante" });
-            RoleComboBox.Location = new Point(25, 301);
+            RoleComboBox.Location = new Point(25, 335);
             RoleComboBox.Name = "RoleComboBox";
             RoleComboBox.Size = new Size(177, 23);
             RoleComboBox.TabIndex = 11;
@@ -81,7 +82,7 @@
             // AddPasswordLabel
             // 
             AddPasswordLabel.AutoSize = true;
-            AddPasswordLabel.Location = new Point(25, 238);
+            AddPasswordLabel.Location = new Point(26, 247);
             AddPasswordLabel.Name = "AddPasswordLabel";
             AddPasswordLabel.Size = new Size(70, 15);
             AddPasswordLabel.TabIndex = 7;
@@ -89,7 +90,7 @@
             // 
             // AddPasswordTextbox
             // 
-            AddPasswordTextbox.Location = new Point(25, 257);
+            AddPasswordTextbox.Location = new Point(26, 266);
             AddPasswordTextbox.Name = "AddPasswordTextbox";
             AddPasswordTextbox.Size = new Size(393, 23);
             AddPasswordTextbox.TabIndex = 30;
@@ -98,7 +99,7 @@
             // StatusCheckBox
             // 
             StatusCheckBox.AutoSize = true;
-            StatusCheckBox.Location = new Point(26, 337);
+            StatusCheckBox.Location = new Point(26, 371);
             StatusCheckBox.Name = "StatusCheckBox";
             StatusCheckBox.Size = new Size(81, 19);
             StatusCheckBox.TabIndex = 10;
@@ -109,7 +110,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(27, 153);
+            label2.Location = new Point(28, 162);
             label2.Name = "label2";
             label2.Size = new Size(102, 15);
             label2.TabIndex = 26;
@@ -117,7 +118,7 @@
             // 
             // secondLastNameTextbox
             // 
-            secondLastNameTextbox.Location = new Point(25, 171);
+            secondLastNameTextbox.Location = new Point(26, 180);
             secondLastNameTextbox.Name = "secondLastNameTextbox";
             secondLastNameTextbox.Size = new Size(393, 23);
             secondLastNameTextbox.TabIndex = 27;
@@ -126,7 +127,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 109);
+            label1.Location = new Point(26, 118);
             label1.Name = "label1";
             label1.Size = new Size(90, 15);
             label1.TabIndex = 24;
@@ -134,7 +135,7 @@
             // 
             // lastNameText
             // 
-            lastNameText.Location = new Point(25, 127);
+            lastNameText.Location = new Point(26, 136);
             lastNameText.Name = "lastNameText";
             lastNameText.Size = new Size(392, 23);
             lastNameText.TabIndex = 25;
@@ -142,7 +143,7 @@
             // 
             // MidNameText
             // 
-            MidNameText.Location = new Point(27, 80);
+            MidNameText.Location = new Point(28, 89);
             MidNameText.Name = "MidNameText";
             MidNameText.Size = new Size(391, 23);
             MidNameText.TabIndex = 23;
@@ -151,7 +152,7 @@
             // MiddleNameLabel
             // 
             MiddleNameLabel.AutoSize = true;
-            MiddleNameLabel.Location = new Point(25, 62);
+            MiddleNameLabel.Location = new Point(26, 71);
             MiddleNameLabel.Name = "MiddleNameLabel";
             MiddleNameLabel.Size = new Size(99, 15);
             MiddleNameLabel.TabIndex = 22;
@@ -160,7 +161,7 @@
             // RegNameLabel
             // 
             RegNameLabel.AutoSize = true;
-            RegNameLabel.Location = new Point(25, 18);
+            RegNameLabel.Location = new Point(26, 27);
             RegNameLabel.Name = "RegNameLabel";
             RegNameLabel.Size = new Size(90, 15);
             RegNameLabel.TabIndex = 20;
@@ -168,7 +169,7 @@
             // 
             // NombreTextbox
             // 
-            NombreTextbox.Location = new Point(27, 36);
+            NombreTextbox.Location = new Point(28, 45);
             NombreTextbox.Name = "NombreTextbox";
             NombreTextbox.Size = new Size(390, 23);
             NombreTextbox.TabIndex = 21;
@@ -176,7 +177,7 @@
             // 
             // correoTextBox
             // 
-            correoTextBox.Location = new Point(25, 215);
+            correoTextBox.Location = new Point(26, 224);
             correoTextBox.Name = "correoTextBox";
             correoTextBox.Size = new Size(392, 23);
             correoTextBox.TabIndex = 29;
@@ -185,17 +186,29 @@
             // correoLabel
             // 
             correoLabel.AutoSize = true;
-            correoLabel.Location = new Point(25, 197);
+            correoLabel.Location = new Point(26, 206);
             correoLabel.Name = "correoLabel";
             correoLabel.Size = new Size(108, 15);
             correoLabel.TabIndex = 28;
             correoLabel.Text = "Correo electrónico:";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(28, 295);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(128, 19);
+            checkBox1.TabIndex = 31;
+            checkBox1.Text = "Mostrar contraseña";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // AddUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(458, 419);
+            Controls.Add(checkBox1);
             Controls.Add(correoTextBox);
             Controls.Add(correoLabel);
             Controls.Add(label2);
@@ -236,5 +249,6 @@
         private TextBox NombreTextbox;
         private TextBox correoTextBox;
         private Label correoLabel;
+        private CheckBox checkBox1;
     }
 }

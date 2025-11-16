@@ -12,7 +12,6 @@ namespace DuocOfCourseAdmin
 {
     public partial class Register : Form
     {
-        // Layout raíz: [Header(logo)] + [Contenido(panel1)]
         private TableLayoutPanel _formRoot;
         private Panel _header;
         private Panel _contentHost;
@@ -57,6 +56,8 @@ namespace DuocOfCourseAdmin
             return (true, "OK");
         }
 
+        // Verificar si el correo es viable y es de duoc. (el formato del correo aún es la de estudiantes
+        // si mal no recuerdo, pero es para testear en nuestros correos por si acaso)
         private static bool EmailVerification(string email)
         {
             if (string.IsNullOrWhiteSpace(email)) return false;
@@ -202,9 +203,9 @@ namespace DuocOfCourseAdmin
         private void LogoBox_Click(object sender, EventArgs e) { }
         private void RegNameLabel_Click(object sender, EventArgs e) { }
         private void RegCorreoLabel_Click(object sender, EventArgs e) { }
-        private void CarreraLabel_Click(object sender, EventArgs e) { }
 
         // Estos no se si los usaremos al final, probablemente los borremos
+        private void CarreraLabel_Click(object sender, EventArgs e) { } 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
 
         // Mostrar/Esconder contraseña
@@ -213,7 +214,7 @@ namespace DuocOfCourseAdmin
             RegPasswordTextbox.UseSystemPasswordChar = !checkBox1.Checked;
         }
 
-        // Inputs 
+        // Inputs (si los borro explota)
         private void RegNombreTextbox_TextChanged(object sender, EventArgs e) { }
         private void MidNameText_TextChanged(object sender, EventArgs e) { }
         private void lastNameText_TextChanged(object sender, EventArgs e) { }

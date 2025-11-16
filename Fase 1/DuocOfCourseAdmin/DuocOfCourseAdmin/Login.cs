@@ -25,6 +25,7 @@ namespace DuocOfCourseAdmin
             MessageBox.Show(message, caption, buttons);
         }
 
+        // Los elementos de la UI
         private void Form1_Load(object sender, EventArgs e) { }
         private void textBox1_TextChanged(object sender, EventArgs e) { }
         private void textBox2_TextChanged(object sender, EventArgs e) { }
@@ -53,7 +54,7 @@ namespace DuocOfCourseAdmin
             this.Hide();
         }
 
-        // Login
+        // Botón Login
         private async void loginButton_Click(object sender, EventArgs e)
         {
             // Validaciones por si están vacíos los campos
@@ -207,8 +208,6 @@ namespace DuocOfCourseAdmin
                 throw;
             }
         }
-
-
 
         // TESTEO DE CAMBIO DE CONTRASEÑA PARA EL LOGIN, EL INICIO DE RECUPERAR LA CONTRASEÑA
         private async void button1_Click(object sender, EventArgs e)

@@ -74,19 +74,7 @@
             LogoutButton.Text = "Cerrar sesión";
             LogoutButton.UseVisualStyleBackColor = false;
             LogoutButton.Click += LogoutButton_Click;
-            // 
-            // ManagementButton
-            // 
-            ManagementButton.Anchor = AnchorStyles.Top;
-            ManagementButton.BackColor = Color.FromArgb(253, 181, 34);
-            ManagementButton.Location = new Point(37, 91);
-            ManagementButton.Name = "ManagementButton";
-            ManagementButton.Size = new Size(129, 41);
-            ManagementButton.TabIndex = 0;
-            ManagementButton.Text = "Gestionar usuarios";
-            ManagementButton.UseVisualStyleBackColor = false;
-            ManagementButton.Click += ManagementButton_Click;
-            // 
+            //
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Right;
@@ -127,6 +115,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(560, 313);
             panel3.TabIndex = 0;
+            panel3.Paint += panel3_Paint;
             // 
             // dataGridView1
             // 
@@ -200,6 +189,7 @@
             Controls.Add(MenuPanel);
             Name = "Menú_principal";
             Text = "Menú_principal";
+            Load += Menú_principal_Load_1;
             MenuPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

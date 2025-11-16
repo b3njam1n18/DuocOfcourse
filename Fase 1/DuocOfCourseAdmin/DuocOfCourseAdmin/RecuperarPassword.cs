@@ -17,6 +17,7 @@ namespace DuocOfCourseAdmin
             InitializeComponent();
         }
 
+        // Sólo probar con nuestros correos, no vaya a existir el correo y se lo mande a alguien más ***************************************
         private void button1_Click(object sender, EventArgs e)
         {
             // Para redirigir al Form destino.

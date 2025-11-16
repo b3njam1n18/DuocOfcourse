@@ -12,6 +12,7 @@ namespace DuocOfCourseAdmin
         public AddUser()
         {
             InitializeComponent();
+            AddPasswordTextbox.UseSystemPasswordChar = true;
         }
 
         private void AddUser_Load(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace DuocOfCourseAdmin
             StatusCheckBox.Checked = true;
         }
 
-
+        // Validación de correo electrónico
         private static bool IsValidDuocEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email)) return false;
@@ -48,7 +49,6 @@ namespace DuocOfCourseAdmin
 
         private void sendMessage(string caption, string message, MessageBoxButtons buttons)
             => MessageBox.Show(message, caption, buttons);
-
 
         private static async Task<long> CreateUserAsync(
             string firstName,
@@ -197,5 +197,10 @@ namespace DuocOfCourseAdmin
         private void RoleComboBox_SelectedIndexChanged(object sender, EventArgs e) { }
         private void StatusCheckBox_CheckedChanged(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            AddPasswordTextbox.UseSystemPasswordChar = !checkBox1.Checked;
+        }
     }
 }
