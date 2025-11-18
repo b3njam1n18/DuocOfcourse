@@ -11,6 +11,7 @@ namespace DuocOfCourseAdmin
 {
     public partial class Menú_principal : Form
     {
+        private readonly string _firstName;
         private bool _editDialogOpen = false;
 
         private readonly BindingSource _bsUsers = new BindingSource();
@@ -28,15 +29,17 @@ namespace DuocOfCourseAdmin
             WHERE u.deleted_at IS NULL
             ORDER BY u.id DESC;";
 
-        public Menú_principal()
+        public Menú_principal(string firstName)
         {
             InitializeComponent();
+            _firstName = string.IsNullOrWhiteSpace(firstName) ? "Usuario" : firstName.Trim();
+
             this.Load += Menú_principal_Load;
             textBox1.TextChanged += textBox1_TextChanged;
         }
 
 
-        // UI 
+                            // UI 
 
         // Cargar la tabla de usuarios con los datos
         private void ConfigurarGrid()
@@ -104,7 +107,7 @@ namespace DuocOfCourseAdmin
         }
 
 
-        // DATA
+                            // DATA
         private async Task CargarUsuariosAsync()
         {
             using var cn = new MySqlConnection(AppConfig.MySqlConn);
@@ -120,11 +123,10 @@ namespace DuocOfCourseAdmin
             _bsUsers.DataSource = _tblUsers;   // Se refresca sola
         }
 
-        // LOAD
+                            // LOAD
         // Carga inicial del listado
         private async void Menú_principal_Load(object sender, EventArgs e)
         {
-            // Probar si carga o no (aunque se ve en el listado)
             try
             {
                 ConfigurarGrid();
@@ -135,6 +137,10 @@ namespace DuocOfCourseAdmin
                 MessageBox.Show("Error cargando usuarios:\n" + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            // Carga el mensaje de bienvenida
+            label1.Text = $"Bienvenido/a, {_firstName}";
+
         }
 
         // Para poder interactuar con el grid y modificar los usuarios
@@ -165,7 +171,7 @@ namespace DuocOfCourseAdmin
                 : $"nombre LIKE '%{q}%' OR email LIKE '%{q}%' OR rol LIKE '%{q}%'";
         }
 
-        // Navegación
+                                // Navegación
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show(this, "¿Desea cerrar sesión?", "Confirmación",
@@ -205,6 +211,16 @@ namespace DuocOfCourseAdmin
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ManagementButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
