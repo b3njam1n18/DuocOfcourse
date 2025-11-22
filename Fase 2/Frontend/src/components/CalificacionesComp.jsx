@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 function CalificacionesComp() {
   const baseBtn = "bg-duocamarillo text-duocgris font-semibold text-sm px-3 py-1.5 rounded hover:bg-duocceleste hover:text-white transition-colors"
   return (
-    <section className="p-8">
+    <section>
       <h2 className="text-3xl font-bold mb-8">Ver calificaciones</h2>
       <h2 className="text-3xl font-bold mb-8">Escuela de ingenieria y recursos Naturales</h2>
       <div className="flex gap-3 flex-wrap">

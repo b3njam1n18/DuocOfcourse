@@ -1,22 +1,28 @@
 import React from "react";
 import userImage from "../assets/DuocOfCourseLogo.png";
 
-function HeaderProfesor() {
+export default function HeaderProfesor({ onOpenMenu }) {
   return (
-    <header className="sticky top-0 z-40 w-full flex items-center justify-between px-6 py-3 bg-white border-b-2 border-blackfixed top-0 left-64 w-[calc(100vw-16rem)] z-40
-                        flex items-center justify-between px-6 py-3
-                        bg-white border-b-2 border-black">
-      <h1 className="text-xl font-bold text-gray-800">
-        Bienvenido, <span className="text-black-600">Profesor</span>
-      </h1>
+    <header className="sticky top-0 z-40 w-full bg-white border-b-2 border-black">
+      <div className="flex items-center justify-between px-4 sm:px-6 py-3">
+        {/* Hamburguesa solo en mobile */}
+        <button
+          type="button"
+          onClick={onOpenMenu}
+          className="lg:hidden mr-2 inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-300"
+          aria-label="Abrir menú"
+        >
+          <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
 
-      <img
-        src={userImage}
-        alt="OfCourseLogo"
-        className=" h-4"
-      />
+        <h1 className="text-xl font-bold text-gray-800">
+          Bienvenido, <span className="text-black">Profesor</span>
+        </h1>
+
+        <img src={userImage} alt="OfCourseLogo" className="h-6 sm:h-8" />
+      </div>
     </header>
   );
 }
-
-export default HeaderProfesor;

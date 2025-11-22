@@ -1,9 +1,8 @@
 import Cursos from "../components/Cursos";
 export default function MisCursos() {
   return (
-    <section className="p-8">
+    <section>
       <main>
-        <section className="p-8">
           <h2 className="text-3xl font-bold mb-8">Mis cursos</h2>
           <div className="flex gap-3 flex-wrap">
             <Cursos />
@@ -19,7 +18,6 @@ export default function MisCursos() {
             <Cursos />
             <Cursos />
           </div>
-        </section>
       </main>
     </section>
   );

@@ -4,7 +4,7 @@ import construccionImg from "../assets/construccion.png";
 
 function ExpCursos() {
   return (
-    <section className="p-8 flex gap-3 flex-wrap">
+    <section className=" flex gap-3 flex-wrap">
       <h2 className="text-3xl font-bold mb-8 ">Escuela de Construcción</h2>
       {/* Contenedor de cartas */}
       <div className="flex gap-3 flex-wrap">
