@@ -26,8 +26,15 @@ function SidebarContent({ onClose }) {
       </nav>
 
       <div className="mt-auto pt-4 border-t border-white/10">
-        <NavLink to="/Login" onClick={onClose}>
-          <button className="w-full rounded-md bg-duocamarillo text-duocgris font-semibold px-3 py-4 hover:bg-duocceleste hover:text-white transition-colors">
+        <NavLink
+          to="/auth/login"
+          onClick={() => {
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+            onClose && onClose();
+          }}
+        >
+          <button className="w-full rounded-md bg-duocamarillo text-duocgris py-4 hover:bg-duocceleste hover:text-white transition-colors">
             Cerrar sesión
           </button>
         </NavLink>

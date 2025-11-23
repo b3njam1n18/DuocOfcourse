@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
+import { login as loginApi } from "../services/api";
 
 export default function Login() {
   const nav = useNavigate();
@@ -13,10 +13,23 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      // TODO: autentica aquí (API / Firebase / etc.)
-      // await api.login(form.email, form.password)
-      nav("/cursos"); // redirige al home de la app
+      const { data } = await loginApi(form.email, form.password);
+
+      // guardar token y datos de usuario
+      localStorage.setItem("token", data.token);
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ userId: data.userId, email: data.email, roleId: data.roleId })
+      );
+
+      // redirigir al home 
+      if (data.roleId === 2) {//id alumno
+        nav("/app");}
+      else if (data.roleId === 3) { //id profesor
+        nav("/profesor");
+      }    
     } catch (err) {
+      console.error(err);
       alert("Credenciales inválidas");
     } finally {
       setLoading(false);
@@ -59,11 +72,14 @@ export default function Login() {
         </div>
 
         <div className="flex items-center justify-between text-sm">
-          <Link to="/RecuperarContrasena" className="text-duocceleste hover:underline">¿Olvidaste tu contraseña?</Link>
+          <Link 
+          to="/auth/recuperar"
+          className="text-duocceleste hover:underline">¿Olvidaste tu contraseña?</Link>
         </div>
-        <Link to="/" className="text-duocceleste hover:underline"><button
+        
+        <button
           type="submit"
-
+          disabled={loading}
           className={[
             btnBase,
             loading
@@ -72,13 +88,17 @@ export default function Login() {
           ].join(" ")}
         >
           {loading ? "Ingresando..." : "Ingresar"}
-        </button></Link>
+        </button>
+        
         
       </form>
 
       <p className="text-center text-sm text-gray-600 mt-6">
         ¿No tienes cuenta?{" "}
-        <Link to="/Register" className="text-duocceleste hover:underline">Crear cuenta</Link>
+        <Link 
+        to="/auth/register" 
+        className="text-duocceleste hover:underline">Crear cuenta
+        </Link>
       </p>
     </div>
   );

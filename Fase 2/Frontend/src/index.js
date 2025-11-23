@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+
 import AppLayout from "./App";
 import AuthLayout from "./AuthLayout";
-import { createBrowserRouter, RouterProvider, BrowserRouter  } from "react-router-dom";
 
 import MisCursos from "./views/MisCursos";
 import ExplorarCursos from "./views/ExplorarCursos";
@@ -15,7 +16,8 @@ import Certificados from "./views/Certificados";
 import DetalleCurso from "./views/DetalleCurso";
 import Clase from "./views/Clase";
 import RecuperarContrasena from "./views/RecuperarContrasena";
-import AuthLogin from './views/AuthLogin';
+import Login from './components/Login';
+import AuthRegister from './views/AuthRegister';
 
 import MisCursosProfesor from './views/profesor/MisCursosProfesor';
 import ProfesorLayout from "./layouts/ProfesorLayout";
@@ -24,53 +26,58 @@ import ClaseProfesor from "./views/profesor/ClaseProfesor";
 import EvaluacionesProfesor from "./views/profesor/EvaluacionesProfesor";
 import EditarEvaluacionProfesor from "./views/profesor/EditarEvaluacionProfesor";
 import CalificacionesProfesor from "./views/profesor/CalificacionesProfesor";
-import AuthRegister from './views/AuthRegister';
-
-
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+import ErrorPage from "./components/errorpage";
 
 const router = createBrowserRouter([
-    {
+  //  redirige al login
+  {
+  path: "/",
+  element: <Navigate to="/auth/login" replace />,
+  },
+
+  //  LAYOUT DE AUTH
+  {
+    path: "/auth",
     element: <AuthLayout />,
+    errorElement: <ErrorPage />,
     children: [
-      { path: "/Login", element: <AuthLogin /> },
-      { path: "/Register", element: <AuthRegister /> },
-      { path: "/RecuperarContrasena", element: <RecuperarContrasena /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <AuthRegister /> },
+      { path: "recuperar", element: <RecuperarContrasena /> },
     ],
   },
+
+  //  LAYOUT ALUMNO
   {
-    path: "/",
+    path: "/app",
     element: <AppLayout />,
+    errorElement: <ErrorPage /> ,
     children: [
       { index: true, element: <MisCursos /> },
-      { path: "ExplorarCursos", element: <ExplorarCursos /> },
-      { path: "Calificaciones", element: <Calificaciones /> },
-      { path: "Evaluaciones", element: <Evaluaciones /> },
-      { path: "Certificados", element: <Certificados /> },
-      { path: "DetalleCurso", element: <DetalleCurso /> },
-      { path: "Clase", element: <Clase /> },
-      { path: "Evaluacion", element: <Evaluacion /> },
-
+      { path: "explorar", element: <ExplorarCursos /> },
+      { path: "calificaciones", element: <Calificaciones /> },
+      { path: "evaluaciones", element: <Evaluaciones /> },
+      { path: "certificados", element: <Certificados /> },
+      { path: "detallecurso", element: <DetalleCurso /> },
+      { path: "clase", element: <Clase /> },
+      { path: "evaluacion", element: <Evaluacion /> },
     ],
   },
 
-  { path: "/profesor", element: <ProfesorLayout />, children: [
+  //  LAYOUT PROFESOR
+  {
+    path: "/profesor",
+    element: <ProfesorLayout />,
+    errorElement: <ErrorPage /> ,
+    children: [
       { index: true, element: <MisCursosProfesor /> },
-      { path: "DetalleCurso", element: <DetalleCursoProfesor /> },
-      { path: "EditarClase", element: <ClaseProfesor /> },
-      { path: "Evaluaciones", element: <EvaluacionesProfesor /> },
-      { path: "EditarEvaluacion", element: <EditarEvaluacionProfesor /> },
-      { path: "Calificaciones", element: <CalificacionesProfesor /> },
-  ]},
+      { path: "detallecurso", element: <DetalleCursoProfesor /> },
+      { path: "editarclase", element: <ClaseProfesor /> },
+      { path: "evaluaciones", element: <EvaluacionesProfesor /> },
+      { path: "editarevaluacion", element: <EditarEvaluacionProfesor /> },
+      { path: "calificaciones", element: <CalificacionesProfesor /> },
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
