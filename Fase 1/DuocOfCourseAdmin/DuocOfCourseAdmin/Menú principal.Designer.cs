@@ -204,7 +204,7 @@
             Controls.Add(panel1);
             Controls.Add(MenuPanel);
             Name = "Menú_principal";
-            Text = "Menú_principal";
+            Text = "Menú principal";
             Load += Menú_principal_Load_1;
             MenuPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panelLogin = new Panel();
-            button1 = new Button();
             registerLink = new LinkLabel();
             passwordButton = new Button();
             passwordLabel = new Label();
@@ -47,7 +46,6 @@
             panelLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelLogin.AutoSize = true;
             panelLogin.BackColor = Color.White;
-            panelLogin.Controls.Add(button1);
             panelLogin.Controls.Add(registerLink);
             panelLogin.Controls.Add(passwordButton);
             panelLogin.Controls.Add(passwordLabel);
@@ -63,22 +61,12 @@
             panelLogin.TabIndex = 0;
             panelLogin.Paint += panelLogin_Paint;
             // 
-            // button1
-            // 
-            button1.Location = new Point(30, 262);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 9;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // registerLink
             // 
             registerLink.Anchor = AnchorStyles.None;
             registerLink.AutoSize = true;
             registerLink.LinkColor = Color.FromArgb(0, 60, 173);
-            registerLink.Location = new Point(159, 250);
+            registerLink.Location = new Point(181, 271);
             registerLink.Name = "registerLink";
             registerLink.Size = new Size(128, 15);
             registerLink.TabIndex = 0;
@@ -173,7 +161,7 @@
             Controls.Add(LogoBox);
             Controls.Add(panelLogin);
             Name = "Login";
-            Text = "Form1";
+            Text = "Inicio de sesión";
             Load += Form1_Load;
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();
@@ -193,6 +181,5 @@
         private Button passwordButton;
         private LinkLabel registerLink;
         private PictureBox LogoBox;
-        private Button button1;
     }
 }

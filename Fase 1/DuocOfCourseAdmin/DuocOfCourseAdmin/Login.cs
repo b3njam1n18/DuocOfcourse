@@ -73,7 +73,7 @@ namespace DuocOfCourseAdmin
                     return;
                 }
 
-                var next = new Menú_principal(firstName);   // <-- pasamos el primer nombre
+                var next = new Menú_principal(firstName);   // Pasamos el primer nombre para el header
                 next.StartPosition = FormStartPosition.CenterScreen;
                 next.FormClosed += (_, __) => this.Close();
                 next.Show();
@@ -92,17 +92,17 @@ namespace DuocOfCourseAdmin
                 await cn.OpenAsync(cts.Token);
 
                 const string SQL = @"
-            SELECT
-                u.id,
-                u.first_name,
-                u.is_active,
-                u.role_id,
-                ac.password_hash
-            FROM users u
-            JOIN auth_credentials ac ON ac.user_id = u.id
-            WHERE u.deleted_at IS NULL
-              AND LOWER(u.email) = LOWER(@email)
-            LIMIT 1;";
+                            SELECT
+                                u.id,
+                                u.first_name,
+                                u.is_active,
+                                u.role_id,
+                                ac.password_hash
+                            FROM users u
+                            JOIN auth_credentials ac ON ac.user_id = u.id
+                            WHERE u.deleted_at IS NULL
+                              AND LOWER(u.email) = LOWER(@email)
+                            LIMIT 1;";
 
                 using var cmd = new MySqlCommand(SQL, cn);
                 cmd.Parameters.AddWithValue("@email", emailInput);
@@ -113,7 +113,7 @@ namespace DuocOfCourseAdmin
 
                 bool isActive = rd.GetBoolean(rd.GetOrdinal("is_active"));
                 if (!isActive)
-                    return (false, "Usuario inactivo.", "");
+                    return (false, "El usuario no se encuentra habilitado.", "");
 
                 int roleId = rd.GetInt32(rd.GetOrdinal("role_id"));
 
@@ -141,72 +141,5 @@ namespace DuocOfCourseAdmin
         }
 
 
-        private async Task SetTempPasswordAsync(string email, string newPlainPassword)
-        {
-            using var cn = new MySqlConnection(AppConfig.MySqlConn);
-            await cn.OpenAsync();
-
-            // Busca el user_id por email
-            long? userId = null;
-            using (var find = new MySqlCommand(
-                "SELECT u.id FROM users u WHERE u.deleted_at IS NULL AND LOWER(u.email)=LOWER(@e) LIMIT 1;", cn))
-            {
-                find.Parameters.AddWithValue("@e", email);
-                var obj = await find.ExecuteScalarAsync();
-                if (obj == null)
-                    throw new Exception("Usuario no existe.");
-                userId = Convert.ToInt64(obj);
-            }
-
-            // Generar hash bcrypt
-            var hash = BCryptNet.HashPassword(newPlainPassword, workFactor: 11);
-
-            // Actualizar o insertar credencial
-            using var tx = await cn.BeginTransactionAsync();
-            try
-            {
-                using (var upd = new MySqlCommand(@"
-            UPDATE auth_credentials SET password_hash=@h, updated_at=NOW()
-            WHERE user_id=@uid;", cn, (MySqlTransaction)tx))
-                {
-                    upd.Parameters.AddWithValue("@h", hash);
-                    upd.Parameters.AddWithValue("@uid", userId);
-                    var rows = await upd.ExecuteNonQueryAsync();
-
-                    if (rows == 0)
-                    {
-                        using var ins = new MySqlCommand(@"
-                    INSERT INTO auth_credentials(user_id,password_hash,created_at)
-                    VALUES(@uid,@h,NOW());", cn, (MySqlTransaction)tx);
-                        ins.Parameters.AddWithValue("@uid", userId);
-                        ins.Parameters.AddWithValue("@h", hash);
-                        await ins.ExecuteNonQueryAsync();
-                    }
-                }
-
-                await tx.CommitAsync();
-            }
-            catch
-            {
-                await tx.RollbackAsync();
-                throw;
-            }
-        }
-
-        // TESTEO DE CAMBIO DE CONTRASEÑA PARA EL LOGIN, EL INICIO DE RECUPERAR LA CONTRASEÑA
-        private async void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Esto debería ser un parámetro: correoText y passwordText ***
-                await SetTempPasswordAsync("ni.canalesm@duocuc.cl", "duoc123");
-                MessageBox.Show("Contraseña reseteada.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
-        }
     }
 }

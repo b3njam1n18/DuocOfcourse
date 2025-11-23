@@ -235,7 +235,7 @@
             Controls.Add(LogoBox);
             Controls.Add(panel1);
             Name = "Register";
-            Text = "7";
+            Text = "Registro";
             Load += Register_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -12,12 +12,13 @@ namespace DuocOfCourseAdmin
 {
     public partial class CorreoEnviado : Form
     {
-        public CorreoEnviado()
+        private readonly string _correo;
+
+        public CorreoEnviado(string correo)
         {
             InitializeComponent();
-            string correo = "test@duocuc.cl";
+            _correo = correo; // no se si es necesario, pero queda ahi por si acaso
             textLabel.Text = $"Se ha enviado un correo a {correo} \npara restablecer la contraseña.";
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace DuocOfCourseAdmin
 
         }
 
+        // Este botón se usa actualmente para redirigir al inicio, no lo usaré aún
         private void button1_Click(object sender, EventArgs e)
         {
             // Para redirigir al Form destino.
@@ -38,6 +40,11 @@ namespace DuocOfCourseAdmin
             next.FormClosed += (_, __) => this.Close();
             next.Show();
             this.Hide();
+        }
+
+        private void textLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

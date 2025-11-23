@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             button1 = new Button();
             textBox1 = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -50,6 +50,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(363, 298);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top;
+            pictureBox1.Image = Properties.Resources.Change_Password_Icon;
+            pictureBox1.Location = new Point(110, 33);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(143, 92);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // button1
             // 
@@ -69,6 +80,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(206, 23);
             textBox1.TabIndex = 2;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
@@ -89,17 +101,6 @@
             label1.TabIndex = 0;
             label1.Text = "Restablecer Contraseña";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top;
-            pictureBox1.Image = Properties.Resources.Change_Password_Icon;
-            pictureBox1.Location = new Point(110, 33);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(143, 92);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            // 
             // RecuperarPassword
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -108,7 +109,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Name = "RecuperarPassword";
-            Text = "RecuperarPassword";
+            Text = "Recuperar contraseña";
+            Load += RecuperarPassword_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

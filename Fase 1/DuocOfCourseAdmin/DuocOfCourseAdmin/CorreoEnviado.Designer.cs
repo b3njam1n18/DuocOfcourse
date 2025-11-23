@@ -49,13 +49,16 @@
             // 
             // textLabel
             // 
+            textLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textLabel.AutoSize = true;
-            textLabel.Location = new Point(69, 152);
+            textLabel.ImageAlign = ContentAlignment.BottomLeft;
+            textLabel.Location = new Point(29, 139);
             textLabel.Name = "textLabel";
             textLabel.Size = new Size(38, 15);
             textLabel.TabIndex = 5;
             textLabel.Text = "label1";
             textLabel.TextAlign = ContentAlignment.TopCenter;
+            textLabel.Click += textLabel_Click;
             // 
             // pictureBox1
             // 
@@ -89,7 +92,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Name = "CorreoEnviado";
-            Text = "CorreoEnviado";
+            Text = "Correo enviado";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

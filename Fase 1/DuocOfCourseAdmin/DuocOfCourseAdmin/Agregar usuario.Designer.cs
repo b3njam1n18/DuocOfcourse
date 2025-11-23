@@ -226,7 +226,7 @@
             Controls.Add(AddRoleLabel);
             Controls.Add(button1);
             Name = "AddUser";
-            Text = "AddUser";
+            Text = "Agregar usuario";
             Load += AddUser_Load;
             ResumeLayout(false);
             PerformLayout();

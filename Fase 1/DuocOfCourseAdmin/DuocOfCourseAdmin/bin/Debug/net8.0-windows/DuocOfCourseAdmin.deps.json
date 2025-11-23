@@ -9,6 +9,7 @@
       "DuocOfCourseAdmin/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "MailKit": "4.14.1",
           "Microsoft.Extensions.Configuration.Json": "10.0.0",
           "MySql.Data": "9.5.0",
           "MySqlConnector": "2.4.0",
@@ -68,6 +69,18 @@
           "lib/net6.0/K4os.Hash.xxHash.dll": {
             "assemblyVersion": "1.0.8.0",
             "fileVersion": "1.0.8.0"
+          }
+        }
+      },
+      "MailKit/4.14.1": {
+        "dependencies": {
+          "MimeKit": "4.14.0",
+          "System.Formats.Asn1": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/MailKit.dll": {
+            "assemblyVersion": "4.14.0.0",
+            "fileVersion": "4.14.1.0"
           }
         }
       },
@@ -183,6 +196,18 @@
           }
         }
       },
+      "MimeKit/4.14.0": {
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.6.2",
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/MimeKit.dll": {
+            "assemblyVersion": "4.14.0.0",
+            "fileVersion": "4.14.0.0"
+          }
+        }
+      },
       "MySql.Data/9.5.0": {
         "dependencies": {
           "BouncyCastle.Cryptography": "2.6.2",
@@ -245,6 +270,7 @@
         }
       },
       "System.Diagnostics.EventLog/8.0.0": {},
+      "System.Formats.Asn1/8.0.1": {},
       "System.IO.Pipelines/10.0.0": {
         "runtime": {
           "lib/net8.0/System.IO.Pipelines.dll": {
@@ -261,6 +287,22 @@
           "lib/net8.0/System.Net.Http.Json.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.1025.47515"
+          }
+        }
+      },
+      "System.Security.Cryptography.Pkcs/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
           }
         }
       },
@@ -357,6 +399,13 @@
       "path": "k4os.hash.xxhash/1.0.8",
       "hashPath": "k4os.hash.xxhash.1.0.8.nupkg.sha512"
     },
+    "MailKit/4.14.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rawu+h3lSSjKra0AxR+IUB99VQ7jWI+MvxThekqLhf+ic7VQ7a69lmPFW+LXuRYHla4ADcn3x16Gsvju3LTq9w==",
+      "path": "mailkit/4.14.1",
+      "hashPath": "mailkit.4.14.1.nupkg.sha512"
+    },
     "Microsoft.Extensions.Configuration/10.0.0": {
       "type": "package",
       "serviceable": true,
@@ -427,6 +476,13 @@
       "path": "microsoft.extensions.primitives/10.0.0",
       "hashPath": "microsoft.extensions.primitives.10.0.0.nupkg.sha512"
     },
+    "MimeKit/4.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g0LtsMC8DCTkc030C3UgVqbltOJmV5cz4AX8ASowz2ZA+lxopXSYtC1XXYmenxy606aWFLwi5Xy4cC/zyYjbjQ==",
+      "path": "mimekit/4.14.0",
+      "hashPath": "mimekit.4.14.0.nupkg.sha512"
+    },
     "MySql.Data/9.5.0": {
       "type": "package",
       "serviceable": true,
@@ -455,6 +511,13 @@
       "path": "system.diagnostics.eventlog/8.0.0",
       "hashPath": "system.diagnostics.eventlog.8.0.0.nupkg.sha512"
     },
+    "System.Formats.Asn1/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XqKba7Mm/koKSjKMfW82olQdmfbI5yqeoLV/tidRp7fbh5rmHAQ5raDI/7SU0swTzv+jgqtUGkzmFxuUg0it1A==",
+      "path": "system.formats.asn1/8.0.1",
+      "hashPath": "system.formats.asn1.8.0.1.nupkg.sha512"
+    },
     "System.IO.Pipelines/10.0.0": {
       "type": "package",
       "serviceable": true,
@@ -468,6 +531,13 @@
       "sha512": "sha512-CoTeijb2aexUlNq6qfaQeuCMP6945g77DDW5ztqPoar+/z6aPySwao693yCrosh4X1tVdQzIm1x+KGM+MC4TnQ==",
       "path": "system.net.http.json/9.0.10",
       "hashPath": "system.net.http.json.9.0.10.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CoCRHFym33aUSf/NtWSVSZa99dkd0Hm7OCZUxORBjRB16LNhIEOf8THPqzIYlvKM0nNDAPTRBa1FxEECrgaxxA==",
+      "path": "system.security.cryptography.pkcs/8.0.1",
+      "hashPath": "system.security.cryptography.pkcs.8.0.1.nupkg.sha512"
     },
     "System.Security.Cryptography.ProtectedData/8.0.0": {
       "type": "package",

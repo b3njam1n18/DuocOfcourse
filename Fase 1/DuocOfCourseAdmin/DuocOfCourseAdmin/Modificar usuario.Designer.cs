@@ -225,7 +225,7 @@
             Controls.Add(AddRoleLabel);
             Controls.Add(SaveButton);
             Name = "Modificar_usuario";
-            Text = "Modificar_usuario";
+            Text = "Modificar usuario";
             Load += Modificar_usuario_Load;
             ResumeLayout(false);
             PerformLayout();
