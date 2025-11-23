@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -19,7 +20,20 @@ function App() {
         </main>
       </div>
     </div>
+    
   );
 }
+//PRUEBA NO CONSIDERAR
+  // const AppLayout = () => {
+  //   return (
+  //     <div className="min-h-screen flex flex-col">
+  //       <Navbar />
+  //       <BackendStatus /> {}
+  //       <main className="flex-1">
+  //         <Outlet />
+  //       </main>
+  //     </div>
+  //   );
+  // };
 
 export default App;

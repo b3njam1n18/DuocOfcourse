@@ -13,10 +13,8 @@ export default function AuthLogin() {
           <img src={img2} alt="Imagen inferior" className="h-10" />
         </div>
 
-        {/* Espacio para que NO se superponga (altura ≈ imágenes apiladas + separación) */}
+        {/* Espacio para que NO se superponga  */}
         <div aria-hidden className="h-32" />
-
-        {/* Tu div/tarjeta */}
        
         <Login/>
         
