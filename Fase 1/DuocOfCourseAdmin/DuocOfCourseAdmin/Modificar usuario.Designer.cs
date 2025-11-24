@@ -224,6 +224,8 @@
             Controls.Add(RoleComboBox);
             Controls.Add(AddRoleLabel);
             Controls.Add(SaveButton);
+            MaximumSize = new Size(486, 459);
+            MinimumSize = new Size(486, 459);
             Name = "Modificar_usuario";
             Text = "Modificar usuario";
             Load += Modificar_usuario_Load;

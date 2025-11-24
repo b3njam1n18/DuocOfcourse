@@ -225,6 +225,8 @@
             Controls.Add(RoleComboBox);
             Controls.Add(AddRoleLabel);
             Controls.Add(button1);
+            MaximumSize = new Size(474, 458);
+            MinimumSize = new Size(474, 458);
             Name = "AddUser";
             Text = "Agregar usuario";
             Load += AddUser_Load;

@@ -51,7 +51,7 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top;
+            panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.White;
             panel1.Controls.Add(backButton);
             panel1.Controls.Add(label2);
@@ -68,7 +68,7 @@
             panel1.Controls.Add(passwordLabel);
             panel1.Controls.Add(RegCorreoTextbox);
             panel1.Controls.Add(RegCorreoLabel);
-            panel1.Location = new Point(230, 107);
+            panel1.Location = new Point(255, 118);
             panel1.Name = "panel1";
             panel1.Size = new Size(379, 310);
             panel1.TabIndex = 0;
@@ -88,7 +88,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(188, 114);
+            label2.Location = new Point(191, 106);
             label2.Name = "label2";
             label2.Size = new Size(102, 15);
             label2.TabIndex = 18;
@@ -96,7 +96,7 @@
             // 
             // secondLastNameTextbox
             // 
-            secondLastNameTextbox.Location = new Point(191, 132);
+            secondLastNameTextbox.Location = new Point(191, 124);
             secondLastNameTextbox.Name = "secondLastNameTextbox";
             secondLastNameTextbox.Size = new Size(144, 23);
             secondLastNameTextbox.TabIndex = 19;
@@ -105,7 +105,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(38, 114);
+            label1.Location = new Point(37, 106);
             label1.Name = "label1";
             label1.Size = new Size(90, 15);
             label1.TabIndex = 16;
@@ -113,7 +113,7 @@
             // 
             // lastNameText
             // 
-            lastNameText.Location = new Point(39, 132);
+            lastNameText.Location = new Point(37, 124);
             lastNameText.Name = "lastNameText";
             lastNameText.Size = new Size(144, 23);
             lastNameText.TabIndex = 17;
@@ -171,7 +171,7 @@
             // 
             // RegNombreTextbox
             // 
-            RegNombreTextbox.Location = new Point(38, 80);
+            RegNombreTextbox.Location = new Point(37, 80);
             RegNombreTextbox.Name = "RegNombreTextbox";
             RegNombreTextbox.Size = new Size(144, 23);
             RegNombreTextbox.TabIndex = 12;
@@ -196,7 +196,7 @@
             // 
             // RegCorreoTextbox
             // 
-            RegCorreoTextbox.Location = new Point(39, 173);
+            RegCorreoTextbox.Location = new Point(37, 173);
             RegCorreoTextbox.Name = "RegCorreoTextbox";
             RegCorreoTextbox.Size = new Size(296, 23);
             RegCorreoTextbox.TabIndex = 13;
@@ -213,12 +213,12 @@
             // 
             // LogoBox
             // 
-            LogoBox.Anchor = AnchorStyles.Top;
+            LogoBox.Anchor = AnchorStyles.None;
             LogoBox.BackColor = Color.Transparent;
             LogoBox.BackgroundImageLayout = ImageLayout.Center;
             LogoBox.ErrorImage = null;
             LogoBox.Image = Properties.Resources.Group_10;
-            LogoBox.Location = new Point(292, 26);
+            LogoBox.Location = new Point(316, 26);
             LogoBox.Name = "LogoBox";
             LogoBox.Size = new Size(248, 75);
             LogoBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -234,6 +234,7 @@
             ClientSize = new Size(903, 554);
             Controls.Add(LogoBox);
             Controls.Add(panel1);
+            MinimumSize = new Size(501, 593);
             Name = "Register";
             Text = "Registro";
             Load += Register_Load;

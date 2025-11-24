@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DuocOfCourseAdmin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eddf384aedcf24c9dd4bc70184bd392c9baecd3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17d8c6b3b8995428b6ff2da0bdf0b2d9fde45c76")]
 [assembly: System.Reflection.AssemblyProductAttribute("DuocOfCourseAdmin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DuocOfCourseAdmin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

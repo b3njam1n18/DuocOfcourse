@@ -36,15 +36,16 @@
             panel1 = new Panel();
             panel2 = new Panel();
             textBox1 = new TextBox();
+            button1 = new Button();
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
             Nombre = new DataGridViewTextBoxColumn();
             Correo = new DataGridViewTextBoxColumn();
             Rol = new DataGridViewTextBoxColumn();
             Activo = new DataGridViewTextBoxColumn();
-            button1 = new Button();
             label1 = new Label();
             label2 = new Label();
+            panel4 = new Panel();
             MenuPanel.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -88,7 +89,8 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Right;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.AutoScroll = true;
             panel1.BackColor = SystemColors.ControlLight;
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(245, 133);
@@ -101,6 +103,7 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(43, 93, 162);
             panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(panel3);
             panel2.Location = new Point(18, 16);
             panel2.Name = "panel2";
@@ -116,12 +119,24 @@
             textBox1.Text = "Buscador";
             textBox1.TextChanged += textBox1_TextChanged;
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.FromArgb(253, 181, 34);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(679, 17);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 36);
+            button1.TabIndex = 0;
+            button1.Text = "Agregar usuario";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.White;
             panel3.Controls.Add(dataGridView1);
-            panel3.Controls.Add(button1);
             panel3.Location = new Point(21, 65);
             panel3.Name = "panel3";
             panel3.Size = new Size(809, 332);
@@ -130,14 +145,14 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Correo, Rol, Activo });
-            dataGridView1.Location = new Point(27, 55);
+            dataGridView1.Location = new Point(27, 25);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 70;
-            dataGridView1.Size = new Size(760, 255);
+            dataGridView1.Size = new Size(760, 285);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -161,19 +176,6 @@
             Activo.HeaderText = "Activo";
             Activo.Name = "Activo";
             // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(43, 93, 162);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(655, 13);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 36);
-            button1.TabIndex = 0;
-            button1.Text = "Agregar usuario";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -185,7 +187,7 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Right;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Location = new Point(1001, 38);
             label2.Name = "label2";
@@ -193,6 +195,15 @@
             label2.TabIndex = 3;
             label2.Text = "DuocOfCourse Admin";
             label2.TextAlign = ContentAlignment.TopRight;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.None;
+            panel4.BackColor = SystemColors.ButtonFace;
+            panel4.Location = new Point(199, 74);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(959, 554);
+            panel4.TabIndex = 4;
             // 
             // Menú_principal
             // 
@@ -203,6 +214,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(MenuPanel);
+            Controls.Add(panel4);
             Name = "Menú_principal";
             Text = "Menú principal";
             Load += Menú_principal_Load_1;
@@ -233,5 +245,6 @@
         private DataGridViewTextBoxColumn Rol;
         private DataGridViewTextBoxColumn Activo;
         private Button ManageButton;
+        private Panel panel4;
     }
 }

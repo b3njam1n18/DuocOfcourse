@@ -38,6 +38,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.White;
             panel1.Controls.Add(textLabel);
             panel1.Controls.Add(pictureBox1);
@@ -91,6 +92,7 @@
             BackColor = Color.FromArgb(1, 44, 86);
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
+            MinimumSize = new Size(412, 391);
             Name = "CorreoEnviado";
             Text = "Correo enviado";
             panel1.ResumeLayout(false);

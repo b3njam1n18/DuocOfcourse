@@ -40,22 +40,23 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.White;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(243, 68);
+            panel1.Location = new Point(229, 67);
             panel1.Name = "panel1";
-            panel1.Size = new Size(363, 298);
+            panel1.Size = new Size(387, 302);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top;
             pictureBox1.Image = Properties.Resources.Change_Password_Icon;
-            pictureBox1.Location = new Point(110, 33);
+            pictureBox1.Location = new Point(121, 34);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(143, 92);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -66,7 +67,7 @@
             // 
             button1.BackColor = Color.FromArgb(253, 181, 34);
             button1.Font = new Font("Segoe UI", 12F);
-            button1.Location = new Point(112, 228);
+            button1.Location = new Point(121, 228);
             button1.Name = "button1";
             button1.Size = new Size(134, 54);
             button1.TabIndex = 3;
@@ -106,8 +107,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(1, 44, 86);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(843, 451);
             Controls.Add(panel1);
+            MinimumSize = new Size(444, 398);
             Name = "RecuperarPassword";
             Text = "Recuperar contraseña";
             Load += RecuperarPassword_Load;
