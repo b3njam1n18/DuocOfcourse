@@ -8,7 +8,7 @@ using DuocOfCourseAdmin.Infrastructure;
 using MailKit.Net.Smtp;
 using MimeKit;
 using MailKit.Security;
-
+using System.Security.Cryptography;
 
 namespace DuocOfCourseAdmin
 {
@@ -104,43 +104,105 @@ namespace DuocOfCourseAdmin
             
         }
 
+        // Helper pq aspnet no funciona en escritorio, solo web
+        private string Base64UrlEncode(byte[] bytes)
+        {
+            return Convert.ToBase64String(bytes)
+                .Replace("+", "-")
+                .Replace("/", "_")
+                .Replace("=", "");
+        }
+
         private async Task EnviarCorreoAsync(string destino)
         {
-            // Creación del mensaje
+            // 1. Obtener usuario desde BD
+            int userId;
+            string firstName;
+
+            using (var cn = new MySqlConnection(AppConfig.MySqlConn))
+            {
+                await cn.OpenAsync();
+
+                var cmd = new MySqlCommand(
+                    "SELECT id, first_name FROM users WHERE deleted_at IS NULL AND LOWER(email)=LOWER(@em) LIMIT 1;",
+                    cn
+                );
+                cmd.Parameters.AddWithValue("@em", destino);
+
+                using var rd = await cmd.ExecuteReaderAsync();
+                if (!rd.Read())
+                    throw new Exception("El correo no existe.");
+
+                userId = rd.GetInt32("id");
+                firstName = rd.GetString("first_name");
+            }
+
+            // 2. Invalidar token previo
+            using (var cn = new MySqlConnection(AppConfig.MySqlConn))
+            {
+                await cn.OpenAsync();
+                var cmd = new MySqlCommand(
+                    "UPDATE password_reset_tokens SET is_used = 1 WHERE user_id=@u AND is_used=0;",
+                    cn
+                );
+                cmd.Parameters.AddWithValue("@u", userId);
+                await cmd.ExecuteNonQueryAsync();
+            }
+
+            // 3. Crear token nuevo (versión compatible WinForms)
+            var raw = RandomNumberGenerator.GetBytes(64);
+            var token = Base64UrlEncode(raw);
+            var expires = DateTime.UtcNow.AddHours(1);
+
+            // 4. Guardar token nuevo en la BD
+            using (var cn = new MySqlConnection(AppConfig.MySqlConn))
+            {
+                await cn.OpenAsync();
+                var cmd = new MySqlCommand(
+                    @"INSERT INTO password_reset_tokens (user_id, token, expires_at, is_used)
+              VALUES (@u, @t, @e, 0);",
+                    cn
+                );
+                cmd.Parameters.AddWithValue("@u", userId);
+                cmd.Parameters.AddWithValue("@t", token);
+                cmd.Parameters.AddWithValue("@e", expires);
+                await cmd.ExecuteNonQueryAsync();
+            }
+
+            // 5. URL real desde config (igual que la web)
+            string frontendUrl = AppConfig.FrontendBaseUrl;
+            string resetLink = $"{frontendUrl}/reset-password?token={token}";
+
+            // 6. Crear correo con el mismo formato que la página
             var message = new MimeMessage();
-
-            // Destinatario
-            message.From.Add(new MailboxAddress("DuocOfCourseAdmin", "nicolas.canales.m.nc@gmail.com")); // Por ahora usaré el mío
+            message.From.Add(new MailboxAddress("DuocOfCourse", "nicolas.canales.m.nc@gmail.com"));
             message.To.Add(new MailboxAddress("", destino));
+            message.Subject = "Restablecer contraseña";
 
-            // Asunto
-            message.Subject = "Recuperación de contraseña DuocOfCourseAdmin";
-
-            // Cuerpo
             message.Body = new TextPart("html")
             {
                 Text = $@"
-                    <p>Hola,<p>
-                    <p>Recibimos una solicitud para restablecer tu contraseña.<p>
-                    <p>Si fuiste tú, haz click en el siguiente enlace:<p>
-            <p><a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>Restablecer contraseña</a></p>" // RECORATORIO: CAMBIAR EL LINK POR LA PÁGINA, NO EL RICKROLL !!!
+            Hola {firstName},<br/><br/>
+            Haz clic en el siguiente enlace para restablecer tu contraseña:<br/>
+            <a href='{resetLink}'>Restablecer contraseña</a><br/><br/>
+            Este enlace expirará en 1 hora."
             };
+
+            // 7. Envío SMTP
             using var client = new SmtpClient();
             try
             {
                 await client.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-
                 await client.AuthenticateAsync("nicolas.canales.m.nc@gmail.com", "gpnw wgdb syaf xufd");
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 throw new Exception("No se pudo enviar el correo: " + ex.Message);
             }
-
-
         }
+
 
     }
 }

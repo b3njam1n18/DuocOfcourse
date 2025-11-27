@@ -3,19 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|c:\\users\\nicol\\documents\\github\\duocofcourse\\fase 1\\duocofcourseadmin\\duocofcourseadmin\\correoenviado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|solutionrelative:duocofcourseadmin\\correoenviado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|c:\\users\\nicol\\documents\\github\\duocofcourse\\fase 1\\duocofcourseadmin\\duocofcourseadmin\\recuperarpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|solutionrelative:duocofcourseadmin\\recuperarpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|c:\\users\\nicol\\documents\\github\\duocofcourse\\fase 1\\duocofcourseadmin\\duocofcourseadmin\\recuperarpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|solutionrelative:duocofcourseadmin\\recuperarpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|c:\\users\\nicol\\documents\\github\\duocofcourse\\fase 1\\duocofcourseadmin\\duocofcourseadmin\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|c:\\users\\nicol\\documents\\github\\duocofcourse\\fase 1\\duocofcourseadmin\\duocofcourseadmin\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|solutionrelative:duocofcourseadmin\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|c:\\users\\nicol\\documents\\github\\duocofcourse\\fase 1\\duocofcourseadmin\\duocofcourseadmin\\correoenviado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|solutionrelative:duocofcourseadmin\\correoenviado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|c:\\users\\nicol\\documents\\github\\duocofcourse\\fase 1\\duocofcourseadmin\\duocofcourseadmin\\infrastructure\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|solutionrelative:duocofcourseadmin\\infrastructure\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|c:\\users\\nicol\\documents\\github\\duocofcourse\\fase 1\\duocofcourseadmin\\duocofcourseadmin\\correoenviado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|solutionrelative:duocofcourseadmin\\correoenviado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\duocofcourseadmin\\recuperarpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|solutionrelative:duocofcourseadmin\\recuperarpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\duocofcourseadmin\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{756E8F14-7DFF-4BF7-A646-1E68C8CC7A22}|DuocOfCourseAdmin\\DuocOfCourseAdmin.csproj|solutionrelative:duocofcourseadmin\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -26,11 +38,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "AppConfig.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Infrastructure\\AppConfig.cs",
+              "RelativeDocumentMoniker": "DuocOfCourseAdmin\\Infrastructure\\AppConfig.cs",
+              "ToolTip": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Infrastructure\\AppConfig.cs",
+              "RelativeToolTip": "DuocOfCourseAdmin\\Infrastructure\\AppConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T18:58:21.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\appsettings.json",
+              "RelativeDocumentMoniker": "DuocOfCourseAdmin\\appsettings.json",
+              "ToolTip": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\appsettings.json",
+              "RelativeToolTip": "DuocOfCourseAdmin\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-25T18:57:51.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CorreoEnviado.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\CorreoEnviado.cs",
+              "RelativeDocumentMoniker": "DuocOfCourseAdmin\\CorreoEnviado.cs",
+              "ToolTip": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\CorreoEnviado.cs",
+              "RelativeToolTip": "DuocOfCourseAdmin\\CorreoEnviado.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAtwCgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T18:33:01.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CorreoEnviado.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\CorreoEnviado.cs",
               "RelativeDocumentMoniker": "DuocOfCourseAdmin\\CorreoEnviado.cs",
@@ -42,20 +93,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "RecuperarPassword.cs",
               "DocumentMoniker": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\RecuperarPassword.cs",
               "RelativeDocumentMoniker": "DuocOfCourseAdmin\\RecuperarPassword.cs",
               "ToolTip": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\RecuperarPassword.cs",
               "RelativeToolTip": "DuocOfCourseAdmin\\RecuperarPassword.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAADgvxsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAIoAAAAAAAAAAADgv6EAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-24T20:07:19.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "RecuperarPassword.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\RecuperarPassword.cs",
               "RelativeDocumentMoniker": "DuocOfCourseAdmin\\RecuperarPassword.cs",
@@ -67,15 +118,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Register.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Register.cs",
               "RelativeDocumentMoniker": "DuocOfCourseAdmin\\Register.cs",
               "ToolTip": "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Register.cs [Dise\u00F1o]",
               "RelativeToolTip": "DuocOfCourseAdmin\\Register.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T19:56:58.775Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-11-24T19:56:58.775Z"
             }
           ]
         }

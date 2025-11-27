@@ -18,5 +18,9 @@ namespace DuocOfCourseAdmin.Infrastructure
 
         // Si quieres leer otras claves: AppConfig.Get("Ui:Theme")
         public static string? Get(string key) => _cfg[key];
+
+
+        // URL del frontend de la página web
+        public static string FrontendBaseUrl = "http://localhost:3000";
     }
 }
