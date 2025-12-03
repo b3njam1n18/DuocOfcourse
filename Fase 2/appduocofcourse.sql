@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2025 a las 16:30:49
+-- Tiempo de generación: 03-12-2025 a las 02:41:19
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -530,6 +530,7 @@ INSERT INTO `schools` (`id`, `name`) VALUES
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
   `first_name` varchar(80) NOT NULL,
   `middle_name` varchar(80) DEFAULT NULL,
   `last_name` varchar(80) NOT NULL,
@@ -545,16 +546,16 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `role_id`, `first_name`, `middle_name`, `last_name`, `second_last_name`, `email`, `is_active`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(15, 2, 'benjamin', 'hernan', 'gamboa', 'araya', 'benjamin.gamboa.gb@gmail.com', 1, '2025-11-23 15:16:50', NULL, NULL),
-(16, 3, 'benjamin', 'hernan', 'gamboa', 'araya', 'be.gamboa@duocuc.cl', 1, '2025-11-23 16:57:26', NULL, NULL),
-(21, 1, 'admin', '', '', '', 'admin@admin.cl', 1, '2025-11-27 19:13:11', NULL, NULL),
-(23, 3, 'BenjaProfe', 'BenjaProfe', 'BenjaProfe', 'BenjaProfe', 'ben.profe@duocuc.cl', 1, '2025-11-27 22:00:27', '2025-11-27 19:02:06', NULL),
-(24, 3, 'profe', 'profe', 'profe', 'profe', 'profe@duocuc.cl', 1, '2025-11-27 19:02:58', '2025-11-27 19:04:29', NULL),
-(25, 2, 'benja estudiante', '', '', '', 'ben.guajardo.estudiante@duocuc.cl', 1, '2025-11-27 22:46:36', NULL, NULL),
-(26, 2, 'Nicolás Canales', 'Nicolás Canales', 'Nicolás Canales', 'Nicolás Canales', 'nicolas.canales@duocuc.cl', 1, '2025-11-27 23:10:17', '2025-11-27 20:19:46', NULL),
-(27, 2, 'benja', '', '', '', 'benjamin.guajardoparra@gmail.com', 1, '2025-11-27 23:17:04', NULL, NULL),
-(28, 1, 'test', 'test', 'test', 'test', 'test@duocuc.cl', 1, '2025-11-27 20:19:03', NULL, NULL);
+INSERT INTO `users` (`id`, `role_id`, `category_id`, `first_name`, `middle_name`, `last_name`, `second_last_name`, `email`, `is_active`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(15, 2, 58, 'benjamin', 'hernan', 'gamboa', 'araya', 'benjamin.gamboa.gb@gmail.com', 1, '2025-11-23 15:16:50', NULL, NULL),
+(16, 3, 58, 'benjamin', 'hernan', 'gamboa', 'araya', 'be.gamboa@duocuc.cl', 1, '2025-11-23 16:57:26', NULL, NULL),
+(21, 1, 58, 'admin', '', '', '', 'admin@admin.cl', 1, '2025-11-27 19:13:11', NULL, NULL),
+(23, 3, 58, 'BenjaProfe', 'BenjaProfe', 'BenjaProfe', 'BenjaProfe', 'ben.profe@duocuc.cl', 1, '2025-11-27 22:00:27', '2025-11-27 19:02:06', NULL),
+(24, 3, 58, 'profe', 'profe', 'profe', 'profe', 'profe@duocuc.cl', 1, '2025-11-27 19:02:58', '2025-11-27 19:04:29', NULL),
+(25, 2, 58, 'benja estudiante', '', '', '', 'ben.guajardo.estudiante@duocuc.cl', 1, '2025-11-27 22:46:36', NULL, NULL),
+(26, 2, 58, 'Nicolás Canales', 'Nicolás Canales', 'Nicolás Canales', 'Nicolás Canales', 'nicolas.canales@duocuc.cl', 1, '2025-11-27 23:10:17', '2025-11-27 20:19:46', NULL),
+(27, 2, 58, 'benja', '', '', '', 'benjamin.guajardoparra@gmail.com', 1, '2025-11-27 23:17:04', NULL, NULL),
+(28, 1, 58, 'test', 'test', 'test', 'test', 'test@duocuc.cl', 1, '2025-11-27 20:19:03', NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -708,7 +709,8 @@ ALTER TABLE `schools`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD KEY `fk_users_role` (`role_id`);
+  ADD KEY `fk_users_role` (`role_id`),
+  ADD KEY `fk_users_category` (`category_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -947,6 +949,7 @@ ALTER TABLE `questions`
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
+  ADD CONSTRAINT `fk_users_category` FOREIGN KEY (`category_id`) REFERENCES `course_categories` (`id`),
   ADD CONSTRAINT `fk_users_role` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
 COMMIT;
 
