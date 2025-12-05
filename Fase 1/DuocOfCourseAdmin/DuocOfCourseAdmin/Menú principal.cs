@@ -13,6 +13,7 @@ namespace DuocOfCourseAdmin
     {
         private readonly string _firstName;
         private bool _editDialogOpen = false;
+        private long LoggedUserId { get; }
 
         private readonly BindingSource _bsUsers = new BindingSource();
         private DataTable _tblUsers = new DataTable();
@@ -23,21 +24,25 @@ namespace DuocOfCourseAdmin
                 u.email,
                 r.name AS rol,
                 u.is_active AS activo,
-                u.created_at
+                u.created_at,
+                cc.name AS Carrera,
+                s.name AS Escuela
             FROM users u
-            JOIN roles r   ON r.id = u.role_id
+            JOIN roles r ON r.id = u.role_id
+            JOIN course_categories cc ON cc.id = u.category_id
+            JOIN schools s ON s.id = cc.school_id
             WHERE u.deleted_at IS NULL
             ORDER BY u.id DESC;";
 
-        public Menú_principal(string firstName)
+
+        public Menú_principal(string firstName, long userId)
         {
             InitializeComponent();
             _firstName = string.IsNullOrWhiteSpace(firstName) ? "Usuario" : firstName.Trim();
-
+            LoggedUserId = userId;
             this.Load += Menú_principal_Load;
             textBox1.TextChanged += textBox1_TextChanged;
         }
-
 
                             // UI 
 
@@ -80,6 +85,13 @@ namespace DuocOfCourseAdmin
                 HeaderText = "Rol",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "colCarrera",
+                DataPropertyName = "Carrera",
+                HeaderText = "Carrera",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            });
             dataGridView1.Columns.Add(new DataGridViewCheckBoxColumn
             {
                 Name = "colActivo",
@@ -107,7 +119,7 @@ namespace DuocOfCourseAdmin
         }
 
 
-                            // DATA
+        // DATA
         private async Task CargarUsuariosAsync()
         {
             using var cn = new MySqlConnection(AppConfig.MySqlConn);
@@ -123,7 +135,7 @@ namespace DuocOfCourseAdmin
             _bsUsers.DataSource = _tblUsers;   // Se refresca sola
         }
 
-                            // LOAD
+        // LOAD
         // Carga inicial del listado
         private async void Menú_principal_Load(object sender, EventArgs e)
         {
@@ -152,11 +164,16 @@ namespace DuocOfCourseAdmin
             if (dataGridView1.Rows[e.RowIndex].DataBoundItem is DataRowView drv)
             {
                 long id = Convert.ToInt64(drv["id"]);
-                using (var frm = new Modificar_usuario(id) { StartPosition = FormStartPosition.CenterParent })
+                using (var frm = new Modificar_usuario(id)
+                {
+                    StartPosition = FormStartPosition.CenterParent,
+                    LoggedUserId = this.LoggedUserId
+                })
                 {
                     if (frm.ShowDialog(this) == DialogResult.OK)
-                        await CargarUsuariosAsync();   // Recarga la tabla
+                        await CargarUsuariosAsync();
                 }
+
             }
         }
 
@@ -172,6 +189,7 @@ namespace DuocOfCourseAdmin
         }
 
                                 // Navegación
+        // Botón Cerrar sesión
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show(this, "¿Desea cerrar sesión?", "Confirmación",

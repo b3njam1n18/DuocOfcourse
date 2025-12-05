@@ -65,15 +65,18 @@ namespace DuocOfCourseAdmin
             loginButton.Enabled = false;
             try
             {
-                var (ok, msg, firstName) = await TryLoginAsync(correoText.Text.Trim(), passwordText.Text);
-
+                var (ok, msg, firstName, userId) = await TryLoginAsync(
+                    correoText.Text.Trim(),
+                    passwordText.Text
+                );
                 if (!ok)
                 {
                     sendMessage("Acceso denegado", msg, MessageBoxButtons.OK);
                     return;
                 }
 
-                var next = new Menú_principal(firstName);   // Pasamos el primer nombre para el header
+                var next = new Menú_principal(firstName, userId);
+                // Pasamos el primer nombre para el header
                 next.StartPosition = FormStartPosition.CenterScreen;
                 next.FormClosed += (_, __) => this.Close();
                 next.Show();
@@ -83,7 +86,7 @@ namespace DuocOfCourseAdmin
         }
 
         /// Compara email y contraseña dentro de la BD
-        private async Task<(bool ok, string message, string firstName)> TryLoginAsync(string emailInput, string plainPassword)
+        private async Task<(bool ok, string message, string firstName, long userId)> TryLoginAsync(string emailInput, string plainPassword)
         {
             try
             {
@@ -109,11 +112,12 @@ namespace DuocOfCourseAdmin
 
                 using var rd = await cmd.ExecuteReaderAsync(cts.Token);
                 if (!await rd.ReadAsync(cts.Token))
-                    return (false, "Credenciales inválidas.", "");
+                    return (false, "Credenciales inválidas.", "", 0);
+
 
                 bool isActive = rd.GetBoolean(rd.GetOrdinal("is_active"));
                 if (!isActive)
-                    return (false, "El usuario no se encuentra habilitado.", "");
+                    return (false, "El usuario no se encuentra habilitado.", "", 0);
 
                 int roleId = rd.GetInt32(rd.GetOrdinal("role_id"));
 
@@ -122,7 +126,7 @@ namespace DuocOfCourseAdmin
                 long userId = rd.GetInt64(rd.GetOrdinal("id"));
 
                 if (!BCrypt.Net.BCrypt.Verify(plainPassword, hash))
-                    return (false, "Credenciales inválidas.", "");
+                    return (false, "Credenciales inválidas.", "", 0);
 
                 rd.Close();
                 using (var upd = new MySqlCommand(
@@ -132,11 +136,11 @@ namespace DuocOfCourseAdmin
                     await upd.ExecuteNonQueryAsync(cts.Token);
                 }
 
-                return (true, "OK", firstName);
+                return (true, "OK", firstName, userId);
             }
             catch (Exception ex)
             {
-                return (false, "Error de conexión: " + ex.Message, "");
+                return (false, "Error de conexión: " + ex.Message, "", 0);
             }
         }
 

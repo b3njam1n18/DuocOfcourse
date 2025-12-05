@@ -215,6 +215,7 @@
             Controls.Add(panel1);
             Controls.Add(MenuPanel);
             Controls.Add(panel4);
+            MinimumSize = new Size(1172, 679);
             Name = "Menú_principal";
             Text = "Menú principal";
             Load += Menú_principal_Load_1;

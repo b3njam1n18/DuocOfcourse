@@ -1,12 +1,20 @@
-# Visual Studio / Copilot
+# Visual Studio
 .vs/
-**/CopilotIndices/
-# Builds
-**/bin/
-**/obj/
-# Archivos de usuario
+*.vssscc
 *.user
 *.suo
-*.userosscache
-*.cache
+
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+
+# Publicaciones / releases
+publish/
+*.exe
+*.msi
+*.zip
+
+# Otros
 *.log

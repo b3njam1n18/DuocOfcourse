@@ -35,7 +35,6 @@
             correoText = new TextBox();
             passwordLabel = new Label();
             passwordButton = new Button();
-            registerLink = new LinkLabel();
             panelLogin = new Panel();
             ((System.ComponentModel.ISupportInitialize)LogoBox).BeginInit();
             panelLogin.SuspendLayout();
@@ -119,26 +118,12 @@
             passwordButton.UseVisualStyleBackColor = true;
             passwordButton.Click += passwordButton_Click;
             // 
-            // registerLink
-            // 
-            registerLink.Anchor = AnchorStyles.None;
-            registerLink.AutoSize = true;
-            registerLink.LinkColor = Color.FromArgb(0, 60, 173);
-            registerLink.Location = new Point(232, 274);
-            registerLink.Name = "registerLink";
-            registerLink.Size = new Size(128, 15);
-            registerLink.TabIndex = 0;
-            registerLink.TabStop = true;
-            registerLink.Text = "Registro nuevo usuario";
-            registerLink.LinkClicked += linkLabel1_LinkClicked;
-            // 
             // panelLogin
             // 
             panelLogin.Anchor = AnchorStyles.None;
             panelLogin.AutoScroll = true;
             panelLogin.BackColor = Color.White;
             panelLogin.BackgroundImageLayout = ImageLayout.None;
-            panelLogin.Controls.Add(registerLink);
             panelLogin.Controls.Add(passwordButton);
             panelLogin.Controls.Add(passwordLabel);
             panelLogin.Controls.Add(correoText);
@@ -179,7 +164,6 @@
         private TextBox correoText;
         private Label passwordLabel;
         private Button passwordButton;
-        private LinkLabel registerLink;
         private Panel panelLogin;
     }
 }

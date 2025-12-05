@@ -14,7 +14,7 @@ namespace DuocOfCourseAdmin
     public partial class Modificar_usuario : Form
     {
         private readonly long _userId;
-
+        public long LoggedUserId { get; set; }
         public Modificar_usuario(long userId)
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace DuocOfCourseAdmin
             AddPasswordTextbox.UseSystemPasswordChar = true;
 
             if (RoleComboBox.Items.Count == 0)
-                RoleComboBox.Items.AddRange(new[] { "Administrador", "Estudiante", "Docente" });
+                RoleComboBox.Items.AddRange(new[] { "Administrador", "Docente", "Estudiante" });
 
             this.Load += Modificar_usuario_Load;
         }
@@ -50,11 +50,11 @@ namespace DuocOfCourseAdmin
         private async Task CargarUsuarioAsync(long id)
         {
             const string SQL = @"
-                SELECT u.id,u.first_name,u.middle_name,u.last_name,u.second_last_name,
-                       u.email,u.role_id,u.is_active
-                FROM users u
-                WHERE u.deleted_at IS NULL AND u.id=@id
-                LIMIT 1;";
+        SELECT u.id,u.first_name,u.middle_name,u.last_name,u.second_last_name,
+               u.email,u.role_id,u.is_active
+        FROM users u
+        WHERE u.deleted_at IS NULL AND u.id=@id
+        LIMIT 1;";
 
             using var cn = new MySqlConnection(AppConfig.MySqlConn);
             await cn.OpenAsync();
@@ -78,7 +78,13 @@ namespace DuocOfCourseAdmin
             correoTextBox.Text = rd["email"] as string ?? "";
 
             int roleId = Convert.ToInt32(rd["role_id"]);
-            RoleComboBox.SelectedIndex = Math.Max(0, Math.Min(2, roleId - 1));
+
+            if (roleId == 1)
+                RoleComboBox.SelectedIndex = 0;  // Administrador
+            else if (roleId == 2)
+                RoleComboBox.SelectedIndex = 2;  // Estudiante
+            else if (roleId == 3)
+                RoleComboBox.SelectedIndex = 1;  // Profesor
 
             StatusCheckBox.Checked = Convert.ToBoolean(rd["is_active"]);
             AddPasswordTextbox.Text = string.Empty; // No ve la contraseña, pero puede modificarla
@@ -105,11 +111,42 @@ namespace DuocOfCourseAdmin
             var email = correoTextBox.Text.Trim();
             var newPassword = AddPasswordTextbox.Text;
             var isActive = StatusCheckBox.Checked;
-            var roleId = (RoleComboBox.SelectedIndex >= 0) ? RoleComboBox.SelectedIndex + 1 : 0;
+            var roleId = RoleComboBox.SelectedIndex switch
+            {
+                0 => 1,   // Administrador
+                1 => 3,   // Profesor
+                2 => 2,   // Estudiante
+                _ => 0    // Valor por defecto (ninguna está seleccionada)
+            };
+
+            // Para evitar que el usuario se cambie el rol a sí mismo, podría ocasionar problemas
+            if (_userId == LoggedUserId)
+            {
+                // Obtener el rol actual
+                using var cnCheck = new MySqlConnection(AppConfig.MySqlConn);
+                await cnCheck.OpenAsync();
+
+                var cmdRole = new MySqlCommand("SELECT role_id FROM users WHERE id=@id LIMIT 1;", cnCheck);
+                cmdRole.Parameters.AddWithValue("@id", _userId);
+                int currentRole = Convert.ToInt32(await cmdRole.ExecuteScalarAsync());
+
+                // El rol no es el mismo que el actual? Error
+                if (roleId != currentRole)
+                {
+                    MessageBox.Show(
+                        "No puedes modificar tu propio rol.",
+                        "Acción no permitida",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+            }
 
             // Validaciones
-            if (controlEmpty(firstName)) { send("Error", "Debe ingresar un nombre."); return; }
-            if (controlEmpty(lastName)) { send("Error", "Debe ingresar un apellido."); return; }
+            if (controlEmpty(firstName)) { send("Error", "Debe ingresar un primer nombre."); return; }
+            if (controlEmpty(lastName)) { send("Error", "Debe ingresar un primer apellido."); return; }
+            if (controlEmpty(secondLastName)) { send("Error", "Debe ingresar un segundo apellido."); return; }
             if (!IsValidDuocEmail(email)) { send("Error", "El correo debe terminar en @duocuc.cl y contener solo una @."); return; }
             if (roleId == 0) { send("Error", "Debe seleccionar un rol."); return; }
             if (!string.IsNullOrEmpty(newPassword) && newPassword.Length < 8)
@@ -125,7 +162,7 @@ namespace DuocOfCourseAdmin
                 using var tx = await cn.BeginTransactionAsync();
 
                 // Verificar que el email no exista (Aún no estoy seguro de si debería cambiar su correo o no, pero estará la opción)
-                // Quizás en el futuro quitemos esta función*
+                // *Quizás en el futuro quitemos esta función*
                 using (var chk = new MySqlCommand(@"
                     SELECT COUNT(1)
                     FROM users
