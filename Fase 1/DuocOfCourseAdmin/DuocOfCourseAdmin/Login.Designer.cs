@@ -46,13 +46,13 @@
             LogoBox.BackColor = Color.Transparent;
             LogoBox.BackgroundImageLayout = ImageLayout.Center;
             LogoBox.ErrorImage = null;
-            LogoBox.Image = Properties.Resources.Group_10;
             LogoBox.Location = new Point(479, 51);
             LogoBox.Name = "LogoBox";
             LogoBox.Size = new Size(248, 75);
             LogoBox.SizeMode = PictureBoxSizeMode.Zoom;
             LogoBox.TabIndex = 1;
             LogoBox.TabStop = false;
+            LogoBox.Click += LogoBox_Click;
             // 
             // passwordText
             // 

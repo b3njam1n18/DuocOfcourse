@@ -17,6 +17,7 @@ namespace DuocOfCourseAdmin
         public RecuperarPassword()
         {
             InitializeComponent();
+            pictureBox1.Image = Properties.Resources.PasswordChange;
         }
 
         // Sólo probar con nuestros correos personales (nicolas.canales.m.nc@gmail.com),
@@ -101,7 +102,7 @@ namespace DuocOfCourseAdmin
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         // Helper pq aspnet no funciona en escritorio, solo web
@@ -203,6 +204,13 @@ namespace DuocOfCourseAdmin
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+        }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

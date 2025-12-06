@@ -200,7 +200,10 @@ namespace DuocOfCourseAdmin
         private void label2_Click(object sender, EventArgs e) { }
         private void SchoolLabel_Click(object sender, EventArgs e) { }
         private void Register_Load(object sender, EventArgs e) { }
-        private void LogoBox_Click(object sender, EventArgs e) { }
+        private void LogoBox_Click(object sender, EventArgs e) 
+        {
+            //LogoBox.Image = Properties.Resources.Group_10;
+        }
         private void RegNameLabel_Click(object sender, EventArgs e) { }
         private void RegCorreoLabel_Click(object sender, EventArgs e) { }
 

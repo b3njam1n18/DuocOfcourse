@@ -17,13 +17,14 @@ namespace DuocOfCourseAdmin
         public CorreoEnviado(string correo)
         {
             InitializeComponent();
+            pictureBox1.Image = Properties.Resources.PasswordChange;
             _correo = correo; // no se si es necesario, pero queda ahi por si acaso
             textLabel.Text = $"Se ha enviado un correo a {correo} \npara restablecer la contraseña.";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void labelText(object sender, EventArgs e)

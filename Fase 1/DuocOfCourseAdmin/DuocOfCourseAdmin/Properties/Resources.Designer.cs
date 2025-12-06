@@ -113,9 +113,29 @@ namespace DuocOfCourseAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DuocOfCourse {
+            get {
+                object obj = ResourceManager.GetObject("DuocOfCourse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Group_10 {
             get {
                 object obj = ResourceManager.GetObject("Group 10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PasswordChange {
+            get {
+                object obj = ResourceManager.GetObject("PasswordChange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

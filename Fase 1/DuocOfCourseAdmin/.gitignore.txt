@@ -1,20 +1,22 @@
-# Visual Studio
+# Visual Studio / .NET
 .vs/
-*.vssscc
-*.user
-*.suo
-
-# Build results
 bin/
 obj/
-[Bb]uild/
-[Ll]og/
+*/bin/
+*/obj/
 
-# Publicaciones / releases
-publish/
-*.exe
-*.msi
-*.zip
+# Publicaciones
+**/publish/
+**/Release/
+**/Debug/
 
-# Otros
+# Archivos de usuario
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Otros temporales
 *.log
+*.tmp
+*.cache

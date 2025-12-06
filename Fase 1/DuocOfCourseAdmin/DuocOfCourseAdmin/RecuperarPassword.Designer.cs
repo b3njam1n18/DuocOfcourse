@@ -51,17 +51,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(387, 302);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top;
-            pictureBox1.Image = Properties.Resources.Change_Password_Icon;
             pictureBox1.Location = new Point(121, 34);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(143, 92);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // button1
             // 

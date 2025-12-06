@@ -1,11 +1,6 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySqlConnector;
 using DuocOfCourseAdmin.Infrastructure;
+using MySqlConnector;
 // Alias para BCrypt.Net-Next
-using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace DuocOfCourseAdmin
 {
@@ -16,6 +11,7 @@ namespace DuocOfCourseAdmin
         public Login()
         {
             InitializeComponent();
+            LogoBox.Image = Properties.Resources.DuocOfCourse;
         }
 
         private bool controlLoginEmpty(string param) => string.IsNullOrWhiteSpace(param);
@@ -144,6 +140,8 @@ namespace DuocOfCourseAdmin
             }
         }
 
-
+        private void LogoBox_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

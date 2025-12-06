@@ -1,13 +1,24 @@
 {
   "ShowEmptyProjects": false,
-  "SelectedGroups": [],
+  "SelectedGroups": [
+    "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\RecuperarPassword.resx",
+    "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Login.resx",
+    "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Modificar usuario.resx",
+    "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\CorreoEnviado.resx",
+    "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Register.resx",
+    "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Properties\\Resources.resx",
+    "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Men\u00FA principal.resx",
+    "C:\\Users\\nicol\\Documents\\GitHub\\DuocOfcourse\\Fase 1\\DuocOfCourseAdmin\\DuocOfCourseAdmin\\Agregar usuario.resx"
+  ],
   "ExpandedProjects": [],
   "EnableSpellChecker": true,
   "ColumnOrder": [
     "name",
     "type",
     "neutral-value",
-    "neutral-comment"
+    "neutral-comment",
+    "file-path",
+    "file-name"
   ],
   "VisibleColumnKeys": [
     "name",
