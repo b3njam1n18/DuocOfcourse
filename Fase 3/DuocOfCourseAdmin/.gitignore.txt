@@ -1,0 +1,22 @@
+# Visual Studio / .NET
+.vs/
+bin/
+obj/
+*/bin/
+*/obj/
+
+# Publicaciones
+**/publish/
+**/Release/
+**/Debug/
+
+# Archivos de usuario
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Otros temporales
+*.log
+*.tmp
+*.cache
