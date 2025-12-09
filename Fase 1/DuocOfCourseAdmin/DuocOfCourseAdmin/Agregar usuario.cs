@@ -226,7 +226,8 @@ namespace DuocOfCourseAdmin
 
                 MessageBox.Show($"Usuario creado correctamente (ID {id}).",
                     "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)

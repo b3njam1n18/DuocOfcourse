@@ -206,19 +206,24 @@ namespace DuocOfCourseAdmin
         }
 
         // Botón Agregar usuario
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
             try
             {
                 using var frm = new AddUser { StartPosition = FormStartPosition.CenterParent };
-                frm.ShowDialog(this);
+
+                if (frm.ShowDialog(this) == DialogResult.OK)
+                {
+                    await CargarUsuariosAsync();
+                }
             }
             finally
             {
                 this.Enabled = true;
                 this.Activate();
             }
+
         }
 
         private void Menú_principal_Load_1(object sender, EventArgs e)
