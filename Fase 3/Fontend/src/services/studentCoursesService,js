@@ -1,0 +1,30 @@
+// src/services/studentCoursesService.js
+import api from "./api";
+
+/**
+ * Trae TODOS los cursos disponibles para el estudiante.
+ * Usa el mismo endpoint que el profe (/Courses).
+ */
+export const getAllCoursesWithSchool = () => {
+  // Tu backend ya usa plural en crearCurso: POST /Courses
+  // Así que asumimos que GET /Courses devuelve la lista de cursos.
+  return api.get("/Courses");
+};
+
+/**
+ * Trae los cursos en los que el estudiante ya está inscrito.
+ * OJO: ajusta la ruta según cómo tengas tu backend.
+ *
+ * Por ejemplo, podrías tener:
+ *   GET /Students/{studentId}/courses
+ *   GET /Enrollments/student/{studentId}
+ */
+export const getStudentEnrollments = (studentId) => {
+  if (!studentId) {
+    // Si no hay usuario logueado, devolvemos lista vacía
+    return Promise.resolve({ data: [] });
+  }
+
+  // ⚠️ Ajusta este endpoint a lo que tengas realmente en tu API
+  return api.get(`/Students/${studentId}/courses`);
+};
