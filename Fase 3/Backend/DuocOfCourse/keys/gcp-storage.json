@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "duocofcourse-479312",
+    "private_key_id": "9558aa6d4a88022ed4deb708e2346dac4a9f0c03",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCT+Eln6lDLazGt\n6pQGPyyFwoWkQ2Q4sJaCkgxs20+D10mqAgariQkvL4r/iLD6P5tUYHpFUzzYgsja\nibW3ldfJoIzZTf7AY19XaKf7+SiJhBiPavQ+jEZpswxLjdgMdHxQ8scl/FnNEqE+\npY7Xqozvj8CwGl8zmoi9XUkFQ9BZaV4ybzpj1RMWsSE/BIUL6KiHWYewW8NxyXQ+\n3iEfVeELXvaB6tBguKOA135au826KX4EVB/pxS+dSe10MosFv3e/y4MH5yw07Ebq\nZf/PT7NvdVXUUXDDbB9P1Og8js1vcjxMfl+nciACy0I4MyWfKY+t6OSzh5TLLQNa\nqHHj1e/pAgMBAAECggEALvy5+qiajW31sZ9679zhu3wAyh+oVKQmt0G/dlXSEzCr\nMLRB//idFQHI5so2QNEv9wRH73m2KZ6mP1dZf/myM1GrSFoPGnKz1OLj7Qy6xahP\n0EMLWk1bEreLoPZi89mNnHrrqHFQ5uESmP0jtfJvnKcObh2Bu7ZH07IqvORC5hEm\n2V3nVcDJHS5RkYE7un78HVLAxne65trHy3HqB6IFiVfugnGYypIaNcR4CTkMOpiD\njZDx2W74aUiRt6ONOBX8JIU3rXrbXG4Dt8I0aRBGoUu8JMHacHQpjPW/xrM8cIhR\nH26cJ9IJPgYZkv0jGPniUvRjRvVzl0VTrYCBLFfYHQKBgQDMbNQFv2laP6Wld+Cv\nfK1zNLnD+gFrc9DzpA80MLqWrV+E6J36uhE9F7AdptyXKI6ck3mUi+P5dKrQBozv\nPftFyYWmJlbuo6xVYXXDmWvjFGtgMwKhpwI4DjFQ0W6l3g0uKX1Q+BHqPxsvN4Zf\nwN6U4vHn1lonaLeElQOfI07BtwKBgQC5TTFoI6aF+ZsaWssm72fODO1b8veJOf37\nD21Yvsdpq1E8c/1EgdmdvjuXTJDGdcuRIBpCaoDChj8BejpLchxXuG4vBRUrSMdj\n2kZajeJXbYw2G1w6Khj2I6tuOoLbiYM/H4az2QmfBmFwDDeKowBbYjxs0zqoFttc\nqbfIi0BbXwKBgBUh/v0lH4gD4mTrsp+RnQC256lZ1AG+tFArmqLDktZ2z9QWlBZS\nW+vb4gn+sPkzaSLIoB36JDQqmmns827cEnjRb26QshXzd6JP8/OnjZ6pArysKU56\nzGDtHq4DKJQfE2+9PEY9juSPZ4kHDW4iqx/rIiTcZO+EBMzA9uHhrYebAoGAOYKP\ntvZ5lFMnpEJRkr/yw6yXblY2JUzuWqErGsP7N/yHte95x21VkPOdoxOMS0v75grE\nm6BaXgU0QM0iko/T5BXFfKpjK4/m8kKoWyp1+RRy08giE5tFK/9eEVPvkRtYtJqg\nP+k4ZzafvxrLkieM0M/oWQ4lwk11v4idFYzCaJkCgYB1U2UIPYs1zzCmIdgAtlJy\nnyHJwyqLvXD099jf0sdChByY6z/h+iB8lwe3J8bARrqPWNTwTnjnSodQDW11982j\n6Cf0o7KlskJyw0ZYP25aakCEKD6XqCeeGsAXxiwh7a2PiUOmJnLoM1UTk6Hb/pdM\nl3lepFrxrJwhR9UV7gaR/g==\n-----END PRIVATE KEY-----\n",
+    "client_email": "duoc-storage-admin@duocofcourse-479312.iam.gserviceaccount.com",
+    "client_id": "109274136036149649649",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/duoc-storage-admin%40duocofcourse-479312.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+}
